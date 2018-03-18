@@ -4,16 +4,16 @@ $myemail  = "cmvalley@gmail.com";
 
 /* Check all form inputs using check_input function */
 $yourname = check_input($_POST['yourname'], "Enter your name");
-$address1  = check_input($_POST['address1'], );
+$address1  = check_input($_POST['address1']);
 $address2   = check_input($_POST['address2']);
 $city  = check_input($_POST['city']);
 $state   = check_input($_POST['state']);
 $zip = check_input($_POST['zip']);
 $phone = check_input($_POST['phone']);
 $email = check_input($_POST['email']);
-$wouldlike = check_input($_POST['wouldlike']);
+$wouldlike = check_input_checkbox($_POST['wouldlike']);
 $how = check_input($_POST['how']);
-$comments = check_input($_POST['comments'],);
+$comments = check_input($_POST['comments']);
 
 /* If e-mail is not valid show error message */
 if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email))
@@ -33,9 +33,9 @@ $message = "Hello!
 Your contact form has been submitted by:
 
 Name: $yourname
-Address: $address
+Address: $address1
 Address2: $address2
-City: $City
+City: $city
 State: $state
 Zip: $zip
 Phone: $phone
@@ -69,6 +69,25 @@ function check_input($data, $problem='')
         show_error($problem);
     }
     return $data;
+}
+
+function check_input_checkbox($chkboxdata, $chkboxproblem='')
+{
+    if(empty($chkboxdata))
+    {
+        $chkboxdata = "Nothing Selected";
+    }
+    else
+    {
+        $n = count($chkboxdata);
+        $returndata = $chkboxdata[0];
+        for($i=1; $i < $n; $i++)
+        {
+        $returndata .= ", " . $chkboxdata[$i];
+        }
+    }
+    return $returndata;
+
 }
 
 function show_error($myError)
