@@ -1395,6 +1395,7 @@ form input[type="submit"], form button, form input[type="reset"] {
   list-style: none;
   margin-bottom: 30px; }
   .seremon-list li {
+    float: left;
     padding: 10px 0 10px 80px;
     position: relative;
     border-bottom: 1px solid #e5e5e5;
