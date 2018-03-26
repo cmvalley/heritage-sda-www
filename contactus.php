@@ -1,8 +1,31 @@
 <?php
+// grab recaptcha library
+require_once "recaptchalib.php";
+
+// your secret key
+$secret = "6LfHZE0UAAAAAOyxIRyKWIIvDxw4kw692ZiGOATD";
+ 
+// empty response
+$response = null;
+ 
+// check secret key
+$reCaptcha = new ReCaptcha($secret);
+
+// if submitted check response
+if ($_POST["g-recaptcha-response"]) {
+    $response = $reCaptcha->verifyResponse(
+        $_SERVER["REMOTE_ADDR"],
+        $_POST["g-recaptcha-response"]
+    );
+}
+
+
 /* Set e-mail recipient */
 $myemail  = "cmvalley@gmail.com";
 
 /* Check all form inputs using check_input function */
+if ($response != null && $response->success) 
+{
 $yourname = check_input($_POST['yourname'], "Enter your name");
 $address1  = check_input($_POST['address1']);
 $address2   = check_input($_POST['address2']);
@@ -14,6 +37,11 @@ $email = check_input($_POST['email']);
 $wouldlike = check_input_checkbox($_POST['wouldlike']);
 $how = check_input($_POST['how']);
 $comments = check_input($_POST['comments']);
+}
+else
+    {
+        show_error("Please verify your submission bu using reCaptcha");
+        }
 
 /* If e-mail is not valid show error message */
 if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email))
