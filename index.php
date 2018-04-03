@@ -6,6 +6,7 @@
 
 
 	<body>
+		<div class="site-content">
 <?php include('header.php'); ?>
 			
 
@@ -204,12 +205,8 @@
 <?php include('footer.php'); ?>
 
 		</div>
-		
 
-		<script src="js/jquery-1.11.1.min.js"></script>
-		<script src="js/plugins.js"></script>
-		<script src="js/app.js"></script>
-		<script src='https://www.google.com/recaptcha/api.js'></script>
+
 	</body>
 
 </html>

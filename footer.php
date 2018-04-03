@@ -23,7 +23,7 @@
 										<td>Divine Service</td><td>11:00am - 12:15pm</td>
 									</tr>
 									<tr>
-										<td>Mid-Week Prayer Service</td><td>5:0pm - 6:00pm</td>
+										<td>Mid-Week Prayer Service</td><td>5:00pm - 6:00pm</td>
 									</tr>
 								</table>
 							</div>
@@ -52,3 +52,7 @@
 
 				</div><!-- .container -->
 			</footer> <!-- .site-footer -->
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/app.js"></script>
+		<script src='https://www.google.com/recaptcha/api.js'></script>
