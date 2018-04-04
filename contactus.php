@@ -83,7 +83,7 @@ End of message
 mail($myemail, $subject, $message);
 
 /* Redirect visitor to the thank you page */
-header('Location: thanks.html');
+header('Location: thanks.php');
 exit();
 
 /* Functions we used */
