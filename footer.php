@@ -52,7 +52,11 @@
 
 				</div><!-- .container -->
 			</footer> <!-- .site-footer -->
-		<script src="js/jquery-1.11.1.min.js"></script>
+		
+				</div> <!--Closing site-content div. Opening site-content div in head.php -->
+<script src="js/jquery-1.11.1.min.js"></script>
 		<script src="js/plugins.js"></script>
 		<script src="js/app.js"></script>
 		<script src='https://www.google.com/recaptcha/api.js'></script>
+
+	</body> <!--Opening body tag in head.php-->

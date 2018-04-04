@@ -1,13 +1,10 @@
+<!--PHP page variables and include head.php for HTML head, header and navigation-->
 <?php 
 	$pagename='Sermons'; 
 	$pageurl='sermons.php';
-	include('head.php');
+	include('head.php'); 
 ?>
 
-
-	<body>
-		<div class="site-content">
-			<?php include('header.php'); ?> <!--Site Header contained in external file -->
 
 			
 
@@ -220,6 +217,5 @@
 			</main> <!-- .main-content -->
 
 			<?php include('footer.php'); ?> <!-- Site Footer contained in external file -->
-		</div>
-	</body>
+
 </html>

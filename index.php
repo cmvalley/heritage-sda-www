@@ -1,14 +1,10 @@
+<!--PHP page variables and include head.php for HTML head, header and navigation-->
 <?php 
 	$pagename='Home'; 
 	$pageurl='index.php';
 	include('head.php');
 ?>
-
-
-	<body>
-		<div class="site-content">
-<?php include('header.php'); ?>
-			
+	
 
 			<div class="hero">
 				<div class="slides">
@@ -194,7 +190,7 @@
 								</ul>
 
 								<div class="text-center">
-									<a href="sermons.html" class="button">See all sermons</a>
+									<a href="sermons.php" class="button">See all sermons</a>
 								</div>
 							</div>
 						</div> <!-- .row -->
@@ -202,11 +198,7 @@
 				</div> <!-- section -->
 			</main> <!-- .main-content -->
 
-<?php include('footer.php'); ?>
+<?php include('footer.php'); ?><!-- Site Footer contained in external file -->
 
-		</div>
-
-
-	</body>
 
 </html>
