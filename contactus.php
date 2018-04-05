@@ -27,10 +27,10 @@ $myemail  = "cmvalley@gmail.com";
 if ($response != null && $response->success) 
 {
 $yourname = check_input($_POST['yourname'], "Enter your name");
-$address1  = check_input($_POST['address1']);
-$address2   = check_input($_POST['address2']);
-$city  = check_input($_POST['city']);
-$state   = check_input($_POST['state']);
+$address1 = check_input($_POST['address1']);
+$address2 = check_input($_POST['address2']);
+$city = check_input($_POST['city']);
+$state = check_input($_POST['state']);
 $zip = check_input($_POST['zip']);
 $phone = check_input($_POST['phone']);
 $email = check_input($_POST['email']);
@@ -39,9 +39,9 @@ $how = check_input($_POST['how']);
 $comments = check_input($_POST['comments']);
 }
 else
-    {
-        show_error("Please verify your submission bu using reCaptcha");
-        }
+{
+    show_error("Please verify your submission by using reCaptcha");
+}
 
 /* If e-mail is not valid show error message */
 if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email))
@@ -103,7 +103,7 @@ function check_input_checkbox($chkboxdata, $chkboxproblem='')
 {
     if(empty($chkboxdata))
     {
-        $chkboxdata = "Nothing Selected";
+        $returndata = "Nothing Selected";
     }
     else
     {
