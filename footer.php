@@ -48,7 +48,7 @@
 						</div>
 					</div> <!-- .row -->
 
-					<p class="colophon">Copyright 2017 Heritage Seventh-Day Adventist Church. All right reserved</p>
+					<p class="colophon">&copy; <?php echo date("Y");?> Heritage Seventh-Day Adventist Church. All right reserved</p>
 
 				</div><!-- .container -->
 			</footer> <!-- .site-footer -->
