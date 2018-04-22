@@ -37,39 +37,11 @@
 					<div class="container">
 						<h2 class="section-title">Daily Bread</h2>
 
-						<div class="row">
-							<div class="col-md-3 col-sm-6">
-
-								<div class="news">
-									<image class="news-image" src="images/tn-lg-pexels-photo-705063.jpeg"></image>
-									<h3 class="news-title"><a href="#">Exodus 3:6-8</a></h3>
-									<small class="date"><i class="fa fa-calendar"></i>Apr 01 2018</small>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6">
-								<div class="news">
-									<image class="news-image" src="images/tn-lg-give-bread.jpeg"></image>
-									<h3 class="news-title"><a href="#">Deuteronomy 30:3-6</a></h3>
-									<small class="date"><i class="fa fa-calendar"></i>Apr 02 2018</small>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6">
-								<div class="news">
-									<image class="news-image" src="images/tn-lg-holy-habits-prayer-pt1.jpeg"></image>
-									<h3 class="news-title"><a href="#">Mark 11:24 30:19</a></h3>
-									<small class="date"><i class="fa fa-calendar"></i>Apr 03 2018</small>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6">
-								<div class="news">
-									<image class="news-image" src="images/tn-lg-air-atmosphere-beautiful-531767.jpg"></image>
-									<h3 class="news-title"><a href="#">Revelation 21:1-5</a></h3>
-									<small class="date"><i class="fa fa-calendar"></i>Apr 04 2018</small>
-								</div>
-							</div>
+						<?php include('back/load_daily_bread_index.php'); ?>
 						</div> <!-- .row -->
 					</div> <!-- .container -->
 				</div> <!-- section -->
+			
 
 				<div class="fullwidth-block">
 					<div class="container">
