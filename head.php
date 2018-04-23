@@ -1,4 +1,8 @@
-<?php $title='Heritage Seventh-Day Adventist Church - ' . $pagename; ?>
+<?php $title='Heritage Seventh-Day Adventist Church - ' . $pagename; 
+$classcurrentmenuitem='current-menu-item';
+$classmenuitem='menu-item';
+$class=$classmenuitem . ' ' . $classcurrentmenuitem;
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -34,11 +38,12 @@
 		<div class="main-navigation">
 		<button class="menu-toggle"><i class="fa fa-bars"></i> Menu</button>
 		<ul class="menu">
-			<li class="menu-item current-menu-item"><a href='../index.php'>Home <small>Come home</small></a></li>
-			<li class="menu-item"><a href="../sermons.php">Sermons <small>Hear the word</small></a></li>
-			<li class="menu-item"><a href="../biblestudies.php">Bible Studies <small>Study the Word</small></a></li>
+			<li class=<?php if($pagename=='Home'){echo '\'menu-item current-menu-item\'';} else {echo '\'menu-item\'';} ?>><a href='../index.php'>Home <small>Come home</small></a></li>
+			<li class=<?php if($pagename=='Sermons'){echo '\'menu-item current-menu-item\'';} else {echo '\'menu-item\'';} ?>><a href="../sermons.php">Sermons <small>Hear the word</small></a></li>
+			<li class=<?php if($pagename=='Bible Studies'){echo '\'menu-item current-menu-item\'';} else {echo '\'menu-item\'';} ?>><a href="../biblestudies.php">Bible Studies <small>Study the Word</small></a></li>
 			<!--<li class="menu-item"><a href="events.html">Events <small>Join in</small></a></li>-->
-			<li class="menu-item"><a href="../contact.php">Contact <small>Reach out</small></a></li>
+			<li class=<?php if($pagename=='Events'){echo '\'menu-item current-menu-item\'';} else {echo '\'menu-item\'';} ?>><a href="../events.php">Events <small>Join in</small></a></li>
+			<li class=<?php if($pagename=='Contact Us'){echo '\'menu-item current-menu-item\'';} else {echo '\'menu-item\'';} ?>><a href="../contact.php">Contact <small>Reach out</small></a></li>
 		</ul>
 	</div>
 		<div class="mobile-navigation"></div>

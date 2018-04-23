@@ -23,7 +23,7 @@
 										<td>Divine Service</td><td>11:00am - 12:15pm</td>
 									</tr>
 									<tr>
-										<td>Mid-Week Prayer Service</td><td>5:00pm - 6:00pm</td>
+										<td>Mid-Week Prayer Service</td><td>4:00pm - 5:00pm</td>
 									</tr>
 								</table>
 							</div>
