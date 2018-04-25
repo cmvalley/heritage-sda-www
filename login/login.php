@@ -13,7 +13,8 @@ $username = $password = "";
 $username_err = $password_err = "";
  
 // Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if($_SERVER["REQUEST_METHOD"] == "POST")
+{
  
     // Check if username is empty
     if(empty(trim($_POST["username"]))){
@@ -30,11 +31,38 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Validate credentials
-    if(empty($username_err) && empty($password_err)){
+    if(empty($username_err) && empty($password_err))
+    {
         // Prepare a select statement
         $sql = "SELECT m_uid, m_pwd FROM member_auth WHERE m_uid = ?";
+        $stmt = $conn->prepare($sql); 
+        $param_username = trim($_POST["username"]);
+        $stmt->execute([$param_username]);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $returned_user = $stmt->fetch();
+        $user_rowcount = $stmt->rowCount();// only returns first row in Fetch:assoc mode. if 1 row found, username already exists in database
+            if($user_rowcount == 1)
+            {
+                if(password_verify($_POST['password'],$row['m_pwd']))
+                {
+                    session_start();
+                    $_SESSION['username'] = $username;      
+                    header("location: welcome.php");
+                }
+                else
+                {
+                    // Display an error message if password is not valid
+                    $password_err = 'The password you entered was not valid.';
+                }
+            }
+            else
+            {
+                // Display an error message if username doesn't exist
+                $username_err = 'No account found with that username.';
+            }
+            
         
-        if($stmt = mysqli_prepare($link, $sql)){
+        /*if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $param_username);
             
@@ -52,8 +80,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     mysqli_stmt_bind_result($stmt, $username, $hashed_password);
                     if(mysqli_stmt_fetch($stmt)){
                         if(password_verify($password, $hashed_password)){
-                            /* Password is correct, so start a new session and
-                            save the username to the session */
+    // Password is correct, so start a new session and save the username to the session 
                             session_start();
                             $_SESSION['username'] = $username;      
                             header("location: welcome.php");
@@ -76,7 +103,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Close connection
-    mysqli_close($link);
+    mysqli_close($link); */
+    $conn = null;
+    }
 }
 ?>
  

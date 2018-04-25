@@ -33,7 +33,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             $stmt->execute([$param_username]);
             $returned_user= $stmt->fetch();
             $user_rowcount = $stmt->rowCount(); // only returns first row in Fetch:assoc mode. if 1 row found, username already exists in database
-            if($stmt == 1)
+            if($user_rowcount == 1)
             {
                 $username_err = "This username is already taken.";
             }
@@ -48,7 +48,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             throw $e;
             
         }
-        $conn = null;   
+          
         
         
         #if($stmt = mysqli_prepare($link, $sql)){
@@ -68,18 +68,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     } #else{
                     #$username = trim($_POST["username"]);
                 #}
-} 
-else
-{
-    #echo "Oops! Something went wrong. Please try again later.";
-}
-        #}
-         
-        // Close statement
-        #mysqli_stmt_close($stmt);
-    #}
-    
-    // Validate password
+
+        // Validate password
     if(empty(trim($_POST['password']))){
         $password_err = "Please enter a password.";     
     } elseif(strlen(trim($_POST['password'])) < 7){
@@ -97,8 +87,7 @@ else
             $confirm_password_err = 'Password did not match.';
         }
     }
-    
-    // Check input errors before inserting in database
+
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err))
     {
         try 
@@ -147,6 +136,7 @@ else
             #else{
                 #echo "Something went wrong. Please try again later.";
             $conn->commit();
+            $conn = null;
             header("location: login.php");
             #}
         #}
@@ -173,6 +163,22 @@ else
     // Close connection
     #mysqli_close($link);
     $conn = null;
+} 
+else
+{
+    #echo "Oops! Something went wrong. Please try again later.";
+}
+        #}
+         
+        // Close statement
+        #mysqli_stmt_close($stmt);
+    #}
+    
+    
+    
+    // Check input errors before inserting in database
+    
+    
 
 ?>
  
