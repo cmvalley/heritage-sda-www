@@ -31,7 +31,7 @@
 						<div class="col-md-4">
 							<div class="widget">
 								<h3 class="widget-title">Contact form</h3>
-								<form action="contactus.php" method="post" class="contact-form">
+								<form action="/contactus.php" method="post" class="contact-form">
 									<div class="row">
 										<div class="col-md-6"><input type="text" name="yourname" placeholder="Your name..."></div>
 										<div class="col-md-6"><input type="text" name="email" placeholder="Email..."></div>
@@ -54,9 +54,9 @@
 			</footer> <!-- .site-footer -->
 		
 				</div> <!--Closing site-content div. Opening site-content div in head.php -->
-<script src="js/jquery-1.11.1.min.js"></script>
-		<script src="js/plugins.js"></script>
-		<script src="js/app.js"></script>
+<script src="/js/jquery-1.11.1.min.js"></script>
+		<script src="/js/plugins.js"></script>
+		<script src="/js/app.js"></script>
 		<script src='https://www.google.com/recaptcha/api.js'></script>
 
 	</body> <!--Opening body tag in head.php-->

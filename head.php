@@ -1,4 +1,5 @@
-<?php $title='Heritage Seventh-Day Adventist Church - ' . $pagename; 
+<?php 
+$title='Heritage Seventh-Day Adventist Church - ' . $pagename; 
 $classcurrentmenuitem='current-menu-item';
 $classmenuitem='menu-item';
 $class=$classmenuitem . ' ' . $classcurrentmenuitem;
@@ -52,7 +53,8 @@ $class=$classmenuitem . ' ' . $classcurrentmenuitem;
 <?php
 	if ($pagename != 'Home')
 	{
-		$pagehead = '<div class="page-head" data-bg-image="../images/page-head-1.jpg">
+		
+		$pagehead = '<div class="page-head" data-bg-image="/images/page-head-1.jpg">
 				<div class="container">
 					<h2 class="page-title">' . $pagename . '</h2>
 				</div>
