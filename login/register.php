@@ -1,4 +1,7 @@
 <?php
+//page metadata
+$pagename='Register'; 
+$pageurl='/login/register.php';
 //force HTTPS
 if($_SERVER["HTTPS"] != "on")
 {
@@ -8,6 +11,7 @@ if($_SERVER["HTTPS"] != "on")
 // Include config file
 
 require_once 'dbconnect.php';
+include '../head.php';
  
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
@@ -51,23 +55,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
           
         
         
-        #if($stmt = mysqli_prepare($link, $sql)){
-            // Bind variables to the prepared statement as parameters
-            #mysqli_stmt_bind_param($stmt, "s", $param_username);
-            
-            // Set parameters
-            #$param_username = trim($_POST["username"]);
-            
-            // Attempt to execute the prepared statement
-            #if(mysqli_stmt_execute($stmt)){
-                /* store result */
-                #mysqli_stmt_store_result($stmt);
-                
-                #if(mysqli_stmt_num_rows($stmt) == 1){
-                    #$username_err = "This username is already taken.";
-    } #else{
-                    #$username = trim($_POST["username"]);
-                #}
+       
+    } 
 
         // Validate password
     if(empty(trim($_POST['password']))){
@@ -116,25 +105,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $param_created_date = $created_date;
         $stmt->execute([$param_member_id, $param_username, $param_created_date]);
 
-        #if($stmt1 = mysqli_prepare($link, $sql1) && $stmt2 = mysqli_prepare($link, $sql2) && $stmt3 = mysqli_prepare($link, $sql3))
-        #{
-            // Bind variables to the prepared statement as parameters
-            #mysqli_stmt_bind_param($stmt1, "ss", $param_username, $param_password);
-            #mysqli_stmt_bind_param($stmt2, "s", $param_username);
-            #mysqli_stmt_bind_param($stmt3, "s", $param_username);
-            // Set parameters
-            #$param_username = $username;
-            #$param_password = password_hash($password, PASSWORD_DEFAULT);
-             // Creates a password hash
-            
-            // Attempt to execute the prepared statement
-            #if(mysqli_stmt_execute($stmt1) && mysqli_stmt_execute($stmt2) && mysqli_stmt_execute($stmt3)){
-                // Redirect to login page
-                 #mysqli_commit($link);
-                
-            #} 
-            #else{
-                #echo "Something went wrong. Please try again later.";
             $conn->commit();
             $conn = null;
             header("location: login.php");
@@ -154,34 +124,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         #echo "Something is wrong please verify";
     }
          
-        // Close statement
-        #mysqli_stmt_close($stmt1);
-        #mysqli_stmt_close($stmt2);
-        #mysqli_stmt_close($stmt3);
-    
-    
-    // Close connection
-    #mysqli_close($link);
+        
     $conn = null;
 } 
 else
 {
-    #echo "Oops! Something went wrong. Please try again later.";
+   
 }
-        #}
-         
-        // Close statement
-        #mysqli_stmt_close($stmt);
-    #}
-    
-    
-    
-    // Check input errors before inserting in database
+
     
     
 
 ?>
- 
+ <!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -193,11 +148,14 @@ else
         .wrapper{ width: 350px; padding: 20px; }
     </style>
 </head>
-<body>
-    <div class="wrapper">
-        <h2>Sign Up</h2>
-        <p>Please fill this form to create an account.</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+<body>-->
+
+<main class="main-content">
+                <div class="fullwidth-block">
+                    <div class="container">
+                        <div class="content col-md-10 ">
+       <p>Please fill this form to create an account.</p>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" >
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Username</label>
                 <input type="text" name="username"class="form-control" value="<?php echo $username; ?>">
@@ -220,5 +178,9 @@ else
             <p>Already have an account? <a href="login.php">Login here</a>.</p>
         </form>
     </div>    
-</body>
+</div>
+</div>
+</main>
+<!--</body>-->
+<?php include '../footer.php'; ?>
 </html>
