@@ -38,7 +38,7 @@ try
       if(!empty($volunteerurl))
       {
         // Create only volunteer button if volunteer URL not empty and event url empty
-        $linkbutton1 = '<a href=' . $volunteerurl . ' class=\'button secondary\'>Volunteer</a>';
+        $linkbutton1 = '<a href=' . $volunteerurl . ' target=\'_blank\' class=\'button secondary\'>Volunteer</a>';
       } 
     } 
     else 

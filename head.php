@@ -1,8 +1,14 @@
 <?php 
+session_start();
 $title='Heritage Seventh-Day Adventist Church - ' . $pagename; 
 $classcurrentmenuitem='current-menu-item';
 $classmenuitem='menu-item';
 $class=$classmenuitem . ' ' . $classcurrentmenuitem;
+if(isset($_SESSION['username']) || !empty($_SESSION['username']))
+{
+	$login_msg='Welcome ' . ucwords($_SESSION['username']);
+	$log_out='<a href=>Sign Out</a>';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,6 +35,10 @@ $class=$classmenuitem . ' ' . $classcurrentmenuitem;
 
 	</head>
 	<body> <!--Closing body tag in footer -->
+		<div align="right">
+		<?php echo $login_msg; ?><br>
+		<?php echo $log_out; ?>
+	</div>
 		<div class="site-content"> <!--Closing site-content div tag in footer-->
 			<header class="site-header">
 	<div class="container">
