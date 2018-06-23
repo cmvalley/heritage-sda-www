@@ -138,7 +138,7 @@
 										<div class="seremon-detail">
 											<h3 class="seremon-title">Bread From Heaven</h3>
 											<div class="seremon-meta">
-												<div class="pastor"><i class="fa fa-user"></i> Rick Quinton</div>
+												<div class="pastor"><i class="fa fa-user"></i> Ellsworth Quinton</div>
 												<div class="date"><i class="fa fa-calendar"></i> 10 Mar 2018</div>
 											</div>
 											<p><audio controls>
