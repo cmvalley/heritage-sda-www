@@ -12,7 +12,7 @@ require_once '../back/db_connect_write.php';
 
 // Define variables and initialize with empty values
 $eventname = $eventdate = $eventdesc = $eventurl = $eventloc = $eventtime = $volunteerurl = "";
-$event_err = "";
+$event_err = $myError = "";
 
 //Check post data
 if($_SERVER["REQUEST_METHOD"] == "POST")
