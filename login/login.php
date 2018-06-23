@@ -1,4 +1,8 @@
 <?php
+session_start();
+//Get Referring URL and name to send user to after login
+$referer = isset($_SESSION['referer']) ? $_SESSION['referer'] : "Location: https://" . $_SERVER["HTTP_HOST"] . "/login/welcome.php";
+echo $referer;
 //page metadata
 $pagename='Login'; 
 $pageurl='/login/login.php';
@@ -9,8 +13,8 @@ if($_SERVER["HTTPS"] != "on")
     exit();
 }
 // Include config file
-require_once 'dbconnect.php';
-include '../head.php';
+require_once '../back/db_connect_read.php';
+require '../head.php';
  
 // Define variables and initialize with empty values
 $username = $password = "";
@@ -38,7 +42,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     if(empty($username_err) && empty($password_err))
     {
         // Prepare a select statement
-        $sql = "SELECT m_uid, m_pwd FROM member_auth WHERE m_uid = ?";
+        $sql = "SELECT m_uid, m_pwd, m_role FROM member_auth WHERE m_uid = ?";
         $stmt = $conn->prepare($sql); 
         $param_username = trim($_POST["username"]);
         $stmt->execute([$param_username]);
@@ -49,9 +53,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             {
                 if(password_verify($_POST['password'],$row['m_pwd']))
                 {
-                    session_start();
-                    $_SESSION['username'] = $username;      
-                    header("location: welcome.php");
+                    
+                    $_SESSION['username'] = $username;
+                    $_SESSION['role'] = $row['m_role'];      
+                    header($referer);
                 }
                 else
                 {

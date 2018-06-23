@@ -10,7 +10,7 @@ if($_SERVER["HTTPS"] != "on")
 }
 // Include config file
 
-require_once 'dbconnect.php';
+require_once '../back/db_connect_write.php';
 include '../head.php';
  
 // Define variables and initialize with empty values

@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$username = "herit568_dbwrite";
+$username = "herit568_dbread";
 $password = "cmeb4ugo!";
 $dbname = "herit568_www";
 

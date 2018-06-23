@@ -1,5 +1,21 @@
 <!--PHP page variables and include head.php for HTML head, header and navigation-->
-!--<?php 
+<?php 
+session_start();
+//force HTTPS
+if($_SERVER["HTTPS"] != "on")
+{
+    header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
+    exit();
+}
+
+// If session variable is not set it will redirect to login page
+if(!isset($_SESSION['username']) || empty($_SESSION['username']))
+{
+	$_SESSION['referer'] = "Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+  header("location: ../login/login.php");
+  exit;
+}
+
 //page metadata
 $pagename='Add Events'; 
 $pageurl='/admin/add-events.php';
@@ -12,7 +28,9 @@ include('../back/load_add_events_admin.php');
 			<div class="row">
 				<div class="content col-md-10 ">
 					<form action="/admin/add-events.php" method="post">
-						<input type="text" name="eventname" placeholder="Event Name" style=" border:solid 0.5px gray" /> <br/>
+						<label><<?php echo $myError; ?>php</label>
+
+						<input type="text" name="eventname" placeholder="Event Name" style=" border:solid 0.5px gray; background-color: rgb(221,216,212); "/> <br/>
 						<input type="text" name="eventurl" placeholder="Event URL" style="border:solid .5px gray" /><br/>
 						<input type="text" name="eventloc" placeholder="Event Location" style="border:solid .5px gray" /><br/>
 						<input type="date" name="eventdate" style="border:solid .5px gray;" placeholder="Event Date" /> <br/>
