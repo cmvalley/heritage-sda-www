@@ -5,11 +5,11 @@ $password = "cmeb4ugo!";
 $dbname = "herit568_www";
 if($eventtype=="Upcoming")
 {
-$sql = "SELECT e_name, e_date, e_url, e_v_url, e_time, e_location, e_description FROM `events` WHERE e_date >= CURDATE() ORDER BY e_date ASC LIMIT 15";
+$sql = "SELECT e_id, e_name, e_date, e_url, e_v_url, e_time, e_location, e_description FROM `events` WHERE e_date >= CURDATE() ORDER BY e_date ASC LIMIT 15";
 }
 else
 {
-  $sql = "SELECT e_name, e_date, e_url, e_v_url, e_time, e_location, e_description FROM `events` WHERE e_date >= CURDATE() AND (e_url <> '' OR e_v_url <> '') ORDER BY e_date ASC LIMIT 15";
+  $sql = "SELECT e_id, e_name, e_date, e_url, e_v_url, e_time, e_location, e_description FROM `events` WHERE e_date >= CURDATE() AND (e_url <> '' OR e_v_url <> '') ORDER BY e_date ASC LIMIT 15";
 }
 try 
 {
@@ -21,6 +21,7 @@ try
   // set the resulting array to associative
   while($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
   {
+    $eventid = $row['e_id'];
     $eventname = $row ['e_name'];
     $eventdate = $row['e_date'];
     $eventurl = $row['e_url'];
@@ -52,7 +53,7 @@ try
       }    
     }
    $li = '<li>
-                    <h3 class="event-title"><a href="#">'. $eventname . '</a></h3>
+                    <h3 class="event-title" id="'. $eventid . '">' . $eventname . '</h3>
                     <span class="event-meta">
                       <span><i class="fa fa-calendar"></i>'. $eventdate . '</span>
                       <span><i class="fa fa-map-marker"></i>'. $eventlocation . '</span>
