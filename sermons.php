@@ -89,6 +89,21 @@
 								<br><h2 class="section-title">Latest sermons</h2>
 								<div class="row">
 							<ul class="seremon-list large">
+							<li>
+<img src="images/tn-adventure-alps-black-and-white-1146642.jpg" class="family-image" alt="">
+										<div class="seremon-detail">
+											<h3 class="seremon-title">I Need A Refuge</h3>
+											<div class="seremon-meta">
+												<div class="pastor"><i class="fa fa-user"></i> Ronnie Gooch</div>
+												<div class="date"><i class="fa fa-calendar"></i> 30 Jun 2018</div>
+											</div>
+											<p><audio controls>
+  													<source src="audio/r-gooch-i-need-a-refuge.mp3" type="audio/mpeg">
+  												</audio></p>
+										</div>
+									</li>
+								
+
 <li>
 <img src="images/tn-landscape-mountain-mountain-peak-52710.jpg" class="family-image" alt="">
 										<div class="seremon-detail">
