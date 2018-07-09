@@ -60,6 +60,19 @@
 								<h2 class="section-title">Latest sermons</h2>
 								<ul class="seremon-list">
 								<li>
+<img src="images/tn-small-freely-10585.jpg" class="family-image" alt="">
+										<div class="seremon-detail">
+											<h3 class="seremon-title">The Dangers of Division</h3>
+											<div class="seremon-meta">
+												<div class="pastor"><i class="fa fa-user"></i> Sam Ball</div>
+												<div class="date"><i class="fa fa-calendar"></i> 07 Jul 2018</div>
+											</div>
+											<p><audio controls>
+  													<source src="audio/s-ball-the-dangers-of-division.mp3" type="audio/mpeg">
+  												</audio></p>
+										</div>
+									</li>
+								<li>
 <img src="images/tn-small-adventure-alps-black-and-white-1146642.jpg" class="family-image" alt="">
 										<div class="seremon-detail">
 											<h3 class="seremon-title">I Need A Refuge</h3>
@@ -72,19 +85,7 @@
   												</audio></p>
 										</div>
 									</li>
-									<li>
-<img src="images/tn-small-landscape-mountain-mountain-peak-52710.jpg" class="family-image" alt="">
-										<div class="seremon-detail">
-											<h3 class="seremon-title">Faith Factor</h3>
-											<div class="seremon-meta">
-												<div class="pastor"><i class="fa fa-user"></i> Tom Carter</div>
-												<div class="date"><i class="fa fa-calendar"></i> 31 Mar 2018</div>
-											</div>
-											<p><audio controls>
-  													<source src="audio/t-carter-the-faith-factor.mp3" type="audio/mpeg">
-  												</audio></p>
-										</div>
-									</li>
+									
 									
 								
 									

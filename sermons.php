@@ -90,6 +90,19 @@
 								<div class="row">
 							<ul class="seremon-list large">
 							<li>
+<img src="images/tn-freely-10585.jpg" class="family-image" alt="">
+										<div class="seremon-detail">
+											<h3 class="seremon-title">The Dangers of Division</h3>
+											<div class="seremon-meta">
+												<div class="pastor"><i class="fa fa-user"></i> Sam Ball</div>
+												<div class="date"><i class="fa fa-calendar"></i> 07 Jul 2018</div>
+											</div>
+											<p><audio controls>
+  													<source src="audio/s-ball-the-dangers-of-division.mp3" type="audio/mpeg">
+  												</audio></p>
+										</div>
+									</li>	
+							<li>
 <img src="images/tn-adventure-alps-black-and-white-1146642.jpg" class="family-image" alt="">
 										<div class="seremon-detail">
 											<h3 class="seremon-title">I Need A Refuge</h3>
