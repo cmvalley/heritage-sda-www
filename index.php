@@ -19,7 +19,7 @@
 						</div>
 					</li>
 
-					<li data-bg-image="images/dhsdabw.jpg">
+					<li data-bg-image="images/tn-head-dh2.jpg">
 						<div class="container">
 							<div class="slide-content">
 								<small class="slide-subtitle">Heritage Douglasville </small>
