@@ -53,14 +53,14 @@
 								</ul>
 
 								<div class="text-center">
-									<a href="#" class="button">See all events</a>
+									<a href="events.php" class="button">See all events</a>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<h2 class="section-title">Latest sermons</h2>
-								<ul class="seremon-list">
+								<ul class="seremon-list large">
 								<li>
-<img src="images/tn-small-freely-10585.jpg" class="family-image" alt="">
+<img src="images/tn-lg-IMG-0284.JPG" class="family-image" alt="">
 										<div class="seremon-detail">
 											<h3 class="seremon-title">The Dangers of Division</h3>
 											<div class="seremon-meta">
@@ -73,7 +73,7 @@
 										</div>
 									</li>
 								<li>
-<img src="images/tn-small-adventure-alps-black-and-white-1146642.jpg" class="family-image" alt="">
+<img src="images/tn-lg-IMG-0284.JPG" class="family-image" alt="">
 										<div class="seremon-detail">
 											<h3 class="seremon-title">I Need A Refuge</h3>
 											<div class="seremon-meta">
@@ -94,6 +94,7 @@
 								<div class="text-center">
 									<a href="sermons.php" class="button">See all sermons</a>
 								</div>
+
 							</div>
 						</div> <!-- .row -->
 					</div> <!-- .container -->

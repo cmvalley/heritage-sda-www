@@ -1422,7 +1422,7 @@ form input[type="submit"], form button, form input[type="reset"] {
       width: 20px; }
   .seremon-list.large li {
     padding-left: 140px;
-    min-height: 150px; }
+    min-height: 100px; }
   .seremon-list.large .seremon-meta .pastor, .seremon-list.large .seremon-meta .date {
     display: inline-block;
     margin-right: 20px; }
