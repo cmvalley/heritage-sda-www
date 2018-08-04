@@ -3,6 +3,7 @@
 	$pagename='Home'; 
 	$pageurl='index.php';
 	include('head.php');
+	
 ?>
 	
 
@@ -49,7 +50,7 @@
 							<div class="col-md-6">
 								<h2 class="section-title">Upcoming events</h2>
 								<ul class="event-list">
-									<?php include ('back/load_events_index.php'); ?>
+									<?php include('back/load_events_index.php'); ?>
 								</ul>
 
 								<div class="text-center">
@@ -59,36 +60,7 @@
 							<div class="col-md-6">
 								<h2 class="section-title">Latest sermons</h2>
 								<ul class="seremon-list large">
-								<li>
-<img src="images/tn-lg-IMG-0284.JPG" class="family-image" alt="">
-										<div class="seremon-detail">
-											<h3 class="seremon-title">The Dangers of Division</h3>
-											<div class="seremon-meta">
-												<div class="pastor"><i class="fa fa-user"></i> Sam Ball</div>
-												<div class="date"><i class="fa fa-calendar"></i> 07 Jul 2018</div>
-											</div>
-											<p><audio controls>
-  													<source src="audio/s-ball-the-dangers-of-division.mp3" type="audio/mpeg">
-  												</audio></p>
-										</div>
-									</li>
-								<li>
-<img src="images/tn-lg-IMG-0284.JPG" class="family-image" alt="">
-										<div class="seremon-detail">
-											<h3 class="seremon-title">I Need A Refuge</h3>
-											<div class="seremon-meta">
-												<div class="pastor"><i class="fa fa-user"></i> Ronnie Gooch</div>
-												<div class="date"><i class="fa fa-calendar"></i> 30 Jun 2018</div>
-											</div>
-											<p><audio controls>
-  													<source src="audio/r-gooch-i-need-a-refuge.mp3" type="audio/mpeg">
-  												</audio></p>
-										</div>
-									</li>
-									
-									
-								
-									
+									<?php include('back/load_sermons_index.php'); ?>									
 								</ul>
 
 								<div class="text-center">
