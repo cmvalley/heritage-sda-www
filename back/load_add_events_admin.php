@@ -76,7 +76,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     }
     catch (Exception $e)
          {
-            #$mysqli->rollback();
             $conn->rollback();
             echo "Something went wrong. Please try again later.";
             throw $e;
