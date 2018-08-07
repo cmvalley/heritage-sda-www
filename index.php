@@ -59,7 +59,7 @@
 							</div>
 							<div class="col-md-6">
 								<h2 class="section-title">Latest sermons</h2>
-								<ul class="seremon-list large">
+								<ul class="seremon-list index">
 									<?php include('back/load_sermons_index.php'); ?>									
 								</ul>
 
