@@ -4,11 +4,13 @@ $title='Heritage Seventh-Day Adventist Church - ' . $pagename;
 $classcurrentmenuitem='current-menu-item';
 $classmenuitem='menu-item';
 $class=$classmenuitem . ' ' . $classcurrentmenuitem;
+$login_msg = $auth_link = ''
 if(isset($_SESSION['username']) || !empty($_SESSION['username']))
 {
 	$login_msg='Welcome ' . ucwords($_SESSION['username']);
-	$log_out='<a href=>Sign Out</a>';
+	$auth_link='<a href="../login/logout.php">Sign Out</a>';
 }
+else{ $auth_link='<a href="../login/login.php">Sign In</a>';}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +39,7 @@ if(isset($_SESSION['username']) || !empty($_SESSION['username']))
 	<body> <!--Closing body tag in footer -->
 		<div align="right">
 		<?php echo $login_msg; ?><br>
-		<?php echo $log_out; ?>
+		<?php echo $auth_link; ?>
 	</div>
 		<div class="site-content"> <!--Closing site-content div tag in footer-->
 			<header class="site-header">
