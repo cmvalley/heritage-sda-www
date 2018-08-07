@@ -1,8 +1,7 @@
 <?php
 session_start();
-//Get Referring URL and name to send user to after login
-$referer = isset($_SESSION['referer']) ? $_SESSION['referer'] : "Location: https://" . $_SERVER["HTTP_HOST"] . "/login/welcome.php";
-echo $referer;
+//Get Referring URL and name to send user to after login if no referrer send to home page
+$referer = isset($_SESSION['referer']) ? $_SESSION['referer'] : "Location: https://" . $_SERVER["HTTP_HOST"] . "/index.php";
 //page metadata
 $pagename='Login'; 
 $pageurl='/login/login.php';
