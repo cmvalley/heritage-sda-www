@@ -1,7 +1,14 @@
 <?php
 session_start();
 //get referring address, if none send to home page after logout
-$referer = isset($_SESSION['referer']) ? $_SESSION['referer'] : "Location: https://" . $_SERVER["HTTP_HOST"] . "/index.php";
+if (stripos($_SESSION['referer'],"admin") !==false || stripos($_SESSION['referer'],"login") !==false)
+{
+    $referer = "Location: https://" . $_SERVER["HTTP_HOST"] . "/index.php";
+}
+else
+{
+    $referer = $_SESSION['referer'];
+}
 // remove all session variables
 session_unset();
 //remove session cookie

@@ -4,7 +4,13 @@ $title='Heritage Seventh-Day Adventist Church - ' . $pagename;
 $classcurrentmenuitem='current-menu-item';
 $classmenuitem='menu-item';
 $class=$classmenuitem . ' ' . $classcurrentmenuitem;
-$login_msg = $auth_link = ''
+$login_msg = $auth_link = '';
+echo($_SESSION['referer']);
+if (stripos($_SESSION['referer'],"login") !==false)
+{
+//set referer in case of sign out/sign in but not on any pages under /login
+$_SESSION['referer'] = "Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; 
+}
 if(isset($_SESSION['username']) || !empty($_SESSION['username']))
 {
 	$login_msg='Welcome ' . ucwords($_SESSION['username']);

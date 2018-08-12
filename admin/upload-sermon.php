@@ -8,16 +8,11 @@ if($_SERVER["HTTPS"] != "on")
     exit();
 }
 // If session variable is not set it will redirect to login page and store location of referring page to redirect user back to after successful login
-if(!isset($_SESSION['username']) || empty($_SESSION['username']))
-{
-	$_SESSION['referer'] = "Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
-  header("location: ../login/login.php");
-  exit;
-}
+
 //page metadata
 $pagename='Upload Sermon'; 
 $pageurl='/admin/upload-sermon.php';
-include('../head.php'); 
+include('../back/admin-head.php'); 
 include('../back/load_upload_sermon_admin.php');
 // Define variables and initialize with empty values
 $upload_message_success = $upload_message = $file_upload_err = $sermon_date_err = $speaker_err = $sermon_title_err = "";
