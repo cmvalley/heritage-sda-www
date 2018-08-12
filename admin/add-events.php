@@ -8,18 +8,10 @@ if($_SERVER["HTTPS"] != "on")
     exit();
 }
 
-// If session variable is not set it will redirect to login page and store location of referring page to redirect user back to after successful login
-if(!isset($_SESSION['username']) || empty($_SESSION['username']))
-{
-	$_SESSION['referer'] = "Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
-  header("location: ../login/login.php");
-  exit;
-}
-
 //page metadata
 $pagename='Add Events'; 
 $pageurl='/admin/add-events.php';
-include('../head.php'); 
+include('../back/admin-head.php'); 
 include('../back/load_add_events_admin.php');
 ?>
 <main class="main-content">
