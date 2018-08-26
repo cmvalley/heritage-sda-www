@@ -34,7 +34,7 @@ else{ $auth_link='<a href="../login/login.php">Sign In</a>';}
 		<link href="../fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 		<!-- Loading main css file -->
-		<link rel="stylesheet" href="../style.css?version=30">
+		<link rel="stylesheet" href="../style.css?version=32">
 		
 		<!--[if lt IE 9]>
 		<script src="js/ie-support/html5.js"></script>
