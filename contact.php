@@ -2,7 +2,9 @@
 <?php 
 	$pagename='Contact Us'; 
 	$pageurl='contact.php';
+	$pagedesc="We'd love to hear from you! Find out more about our church, seek prayer, bible studies or join our family!";
 	include('head.php'); 
+	
 ?>
 		
 		<main class="main-content">

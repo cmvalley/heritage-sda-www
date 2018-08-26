@@ -3,6 +3,7 @@
 	$pagename='Sermons'; 
 	$pageurl='sermons.php';
 	$featured='';
+	$pagedesc="Hear previous sermons from Doulgasville Heritage Seventh-Day Adventist (SDA) Church";
 	include('head.php'); 
 ?>
 

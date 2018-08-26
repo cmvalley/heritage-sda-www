@@ -2,6 +2,8 @@
 <?php 
 	$pagename='Bible Studies'; 
 	$pageurl='biblestudies.php';
+	$pagedesc="Join us for Sabbath morning praise and bible study at 9:15am, or our lunch time study after church every third Sabbath. 
+	Can" . "'t make it for either of those? Check out our online bible studies and learn more about the Word of God";
 	include('head.php'); 
 ?>
 		<main class="main-content">
