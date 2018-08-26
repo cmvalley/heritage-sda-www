@@ -5,6 +5,7 @@ $classcurrentmenuitem='current-menu-item';
 $classmenuitem='menu-item';
 $class=$classmenuitem . ' ' . $classcurrentmenuitem;
 $login_msg = $auth_link = '';
+$page_description = $pagedesc;
 echo($_SESSION['referer']);
 if (stripos($_SESSION['referer'],"login") !==false)
 {
@@ -24,6 +25,7 @@ else{ $auth_link='<a href="../login/login.php">Sign In</a>';}
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		<meta name="description"  content=<?php echo('"' . $page_description . '"'); ?> />
 		
 		<title><?php echo($title); ?></title>
 

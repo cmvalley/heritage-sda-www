@@ -21,7 +21,11 @@ try
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $stmt = $conn->prepare($sql); 
   $stmt->execute();
-
+  $event_rowcount = $stmt->rowCount();
+  if($event_rowcount < 1)
+  {
+    echo "No " . lcfirst($eventtype) . " events";
+  }
   // set the resulting array to associative
   while($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
   {

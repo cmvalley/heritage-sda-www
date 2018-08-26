@@ -2,6 +2,7 @@
 <?php 
 	$pagename='Events'; 
 	$pageurl='events.php';
+	$pagedesc="What's happening at Douglasville Heritage SDA Church!";
 	include('head.php'); 
 ?>
 

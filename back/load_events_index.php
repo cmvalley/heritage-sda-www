@@ -9,6 +9,11 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $conn->prepare("SELECT e_id, e_name, e_date FROM `events` WHERE e_date >= CURDATE() ORDER BY e_date ASC LIMIT 6"); 
     $stmt->execute();
+    $event_rowcount = $stmt->rowCount();
+    if($event_rowcount < 1)
+    {
+      echo "No upcoming events";
+    }
 
     // set the resulting array to associative
    while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {

@@ -2,6 +2,10 @@
 <?php 
 	$pagename='Home'; 
 	$pageurl='index.php';
+	$pagedesc='Welcome to the Heritage Seventh-Day Adventist (SDA) Church, 
+	location: 6969 Highway 5, Douglasville, GA. 5, 15 minutes south from exit 34 on the I-20.
+	We are a Christian community and would love to have you join us for Bible study, worship, and prayer,
+	Senior Pastor: Sam Ball';
 	include('head.php');
 	
 ?>
