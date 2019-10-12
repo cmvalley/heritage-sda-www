@@ -4,7 +4,7 @@
 						<div class="col-md-4">
 							<div class="widget">
 								<h3 class="widget-title">Our address</h3>
-								<p>We are located on Highway 5, 15 minutes south from exit 34 on the I-20.</p>
+								<p>We are located on Highway 5, 15 minutes south from exit 34 on I-20.</p>
 								<ul class="address">
 									<li><i class="fa fa-map-marker"></i> 6969 Highway 5, Douglasville, GA 30135</li>
 									<li><i class="fa fa-phone"></i> (678) 953 8558</li>
@@ -23,7 +23,7 @@
 										<td>Divine Service</td><td>11:00am - 12:15pm</td>
 									</tr>
 									<tr>
-										<td>Mid-Week Prayer Service</td><td>4:00pm - 5:00pm</td>
+										<td>Mid-Week Prayer Service</td><td>6:00pm - 7:00pm</td>
 									</tr>
 								</table>
 							</div>
