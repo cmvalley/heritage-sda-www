@@ -1,9 +1,9 @@
 <?php
 session_start();
-//get referring address, if none send to home page after logout
-if (stripos($_SESSION['referer'],"admin") !==false || stripos($_SESSION['referer'],"login") !==false)
+//get referring address and send user there after logout, if none or if the refering page was an admin or login page, send to home page
+if (stripos($_SESSION['referer'],"admin") !== false || stripos($_SESSION['referer'],"login") !== false)
 {
-    $referer = "Location: https://" . $_SERVER["HTTP_HOST"] . "/index.php";
+   $referer = "Location: https://" . $_SERVER["HTTP_HOST"] . "/index.php";
 }
 else
 {

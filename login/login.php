@@ -1,7 +1,5 @@
 <?php
 session_start();
-//Get Referring URL and name to send user to after login if no referrer and admin send to admin home page if not admin send to home page
-$referer = isset($_SESSION['referer']) ? $_SESSION['referer'] : "Location: https://" . $_SERVER["HTTP_HOST"] . "/index.php";
 //page metadata
 $pagename='Login'; 
 $pageurl='/login/login.php';
@@ -55,10 +53,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                     
                     $_SESSION['username'] = $username;
                     $_SESSION['role'] = $row['m_role']; 
-                    if ($_SESSION['role'] == "admin" && !isset($_SESSION['referer']))
+                    //if user is an admin and the referring page was not an admin page (previous session expired whil on admin page) redirect user to admin home page.
+                    //otherwise redirect user to the referring page
+                    if ($_SESSION['role'] == "admin" && stripos($_SESSION['referer'],"admin") === false)
                     {
                         $referer="Location: https://" . $_SERVER["HTTP_HOST"] . "/admin/admin-home.php";
-                    }     
+                    } 
+                     
                     header($referer);
                 }
                 else

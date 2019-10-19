@@ -6,18 +6,34 @@ $classmenuitem='menu-item';
 $class=$classmenuitem . ' ' . $classcurrentmenuitem;
 $login_msg = $auth_link = '';
 $page_description = $pagedesc;
-echo($_SESSION['referer']);
-if (stripos($_SESSION['referer'],"login") !==false)
+$referer = isset($_SESSION['referer']) ? $_SESSION['referer'] : ""; //Get referring page if none set to empty
+//Check current page URL if it is a login page we don't want to set it as the new referral page for after login (configured in login.php code)
+if (stripos($_SERVER["REQUEST_URI"],"login") !== false) //stripos returns null/false if the string is noy found 
 {
-//set referer in case of sign out/sign in but not on any pages under /login
-$_SESSION['referer'] = "Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; 
+	//the current page is a login page; we check if the referring page is empty or if the reffering page was a login page (post). If both we set both the variable
+	//used during login to redirect and the session referer to the index home page otherwise we only set the refering page to the previous refering page
+	if($referer == "" || stripos($referer,"login") !== false)
+	{
+		$_SESSION['referer'] = "Location: https://" . $_SERVER["HTTP_HOST"] . "/index.php";
+		$referer="Location: https://" . $_SERVER["HTTP_HOST"] . "/index.php";
+	}
+	else
+	{
+		$_SESSION['referer'] = $referer;
+	}
 }
+else
+{
+	$_SESSION['referer'] = "Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; 
+}
+
 if(isset($_SESSION['username']) || !empty($_SESSION['username']))
 {
 	$login_msg='Welcome ' . ucwords($_SESSION['username']);
 	$auth_link='<a href="../login/logout.php">Sign Out</a>';
 }
 else{ $auth_link='<a href="../login/login.php">Sign In</a>';}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +63,7 @@ else{ $auth_link='<a href="../login/login.php">Sign In</a>';}
 	<body> <!--Closing body tag in footer -->
 		<div align="right">
 		<?php echo $login_msg; ?><br>
-		<?php echo $auth_link; ?>
+		<?php echo $auth_link; ?><br>
 	</div>
 		<div class="site-content"> <!--Closing site-content div tag in footer-->
 			<header class="site-header">

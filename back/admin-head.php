@@ -2,6 +2,15 @@
 session_start();
 $title='Heritage Seventh-Day Adventist Church - ' . $pagename; 
 $class = $login_msg = $auth_link = '';
+//if referring page is not the login page then set the current page as the referer otherwise set the referring page as the admin home page 
+if (stripos($_SESSION['referer'],"login") === false)
+{
+	$_SESSION['referer'] = "Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; 
+}
+else
+{
+	$_SESSION['referer'] = "Location: https://" . $_SERVER["HTTP_HOST"] . "/admin/admin-home.php";
+}
 if(isset($_SESSION['username']) || !empty($_SESSION['username']))
 {
 	$login_msg='Welcome ' . ucwords($_SESSION['username']);
