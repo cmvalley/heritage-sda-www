@@ -108,6 +108,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             $conn->commit();
             $conn = null;
             header("location: login.php");
+            exit();
             #}
         #}
         }

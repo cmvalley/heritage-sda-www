@@ -22,7 +22,7 @@ else
     // If session variable is not set it will redirect to login page and store location of referring page to redirect user back to after successful login
 	$_SESSION['referer'] = "Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
     header("location: ../login/login.php");
-    exit;
+    exit();
 }
 ?>
 <!DOCTYPE html>

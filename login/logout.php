@@ -23,4 +23,5 @@ if (ini_get("session.use_cookies")) {
 session_destroy(); 
 //send to referer
 header($referer);
+exit();
 ?>

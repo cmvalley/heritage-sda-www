@@ -53,14 +53,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                     
                     $_SESSION['username'] = $username;
                     $_SESSION['role'] = $row['m_role']; 
-                    //if user is an admin and the referring page was not an admin page (previous session expired whil on admin page) redirect user to admin home page.
-                    //otherwise redirect user to the referring page
-                    if ($_SESSION['role'] == "admin" && stripos($_SESSION['referer'],"admin") === false)
+                    //check if user is here from another page that requires authentication if so session refer should be set, redirect there
+                    if (isset($_SESSION['authrefererflag']) && $_SESSION['authrefererflag'] = true)
                     {
-                        $referer="Location: https://" . $_SERVER["HTTP_HOST"] . "/admin/admin-home.php";
-                    } 
-                     
-                    header($referer);
+                        $_SESSION['authrefererflag'] = false; //reset refer flag 
+                        header($_SESSION['referer'] );
+                        exit();
+                        //if user is an admin and the referring page was not an admin page (previous session expired while on admin page) redirect user to admin home page.
+                        //otherwise redirect user to the referring page
+                    }
+                    elseif ($_SESSION['role'] == "admin" && stripos($_SESSION['referer'],"admin") === false )
+                    {
+                        $_SESSION['referer']="Location: https://" . $_SERVER["HTTP_HOST"] . "/admin/admin-home.php";
+                        header($_SESSION['referer']);
+                        exit();
+                    }                        
+                    else
+                    {
+                        header($_SESSION['referer']);
+                        exit();
+                    }
+                
                 }
                 else
                 {

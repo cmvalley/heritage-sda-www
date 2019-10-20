@@ -6,20 +6,14 @@ $classmenuitem='menu-item';
 $class=$classmenuitem . ' ' . $classcurrentmenuitem;
 $login_msg = $auth_link = '';
 $page_description = $pagedesc;
-$referer = isset($_SESSION['referer']) ? $_SESSION['referer'] : ""; //Get referring page if none set to empty
 //Check current page URL if it is a login page we don't want to set it as the new referral page for after login (configured in login.php code)
-if (stripos($_SERVER["REQUEST_URI"],"login") !== false) //stripos returns null/false if the string is noy found 
+if (stripos($_SERVER["REQUEST_URI"],"login") !== false) //stripos returns null/false if the string is not found 
 {
 	//the current page is a login page; we check if the referring page is empty or if the reffering page was a login page (post). If both we set both the variable
 	//used during login to redirect and the session referer to the index home page otherwise we only set the refering page to the previous refering page
-	if($referer == "" || stripos($referer,"login") !== false)
+	if(empty($_SESSION['referer']) || stripos($_SESSION['referer'],"login") !== false)
 	{
 		$_SESSION['referer'] = "Location: https://" . $_SERVER["HTTP_HOST"] . "/index.php";
-		$referer="Location: https://" . $_SERVER["HTTP_HOST"] . "/index.php";
-	}
-	else
-	{
-		$_SESSION['referer'] = $referer;
 	}
 }
 else
